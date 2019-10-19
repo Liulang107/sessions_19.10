@@ -6,11 +6,12 @@ from .models import Player, Game, PlayerGameInfo
 class PlayerAdmin(admin.ModelAdmin):
     pass
 
+
 @admin.register(Game)
 class GameAdmin(admin.ModelAdmin):
     pass
 
+
 @admin.register(PlayerGameInfo)
 class PlayerGameInfoAdmin(admin.ModelAdmin):
     list_display = ('player', 'game', 'author')
-

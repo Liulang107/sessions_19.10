@@ -8,7 +8,6 @@ import random
 def show_home(request):
     player_session = request.session.get('player_id')
     game_session = request.session.get('game_id')
-    context = {}
 
     if player_session and game_session:
         game = Game.objects.get(game_id=game_session)
@@ -43,6 +42,7 @@ def show_home(request):
         request.session['player_id'] = str(current_player.player_id)
         request.session['game_id'] = str(game.game_id)
         return redirect('/')
+
 
 def show_author_page(request):
     game = Game.objects.get(game_id=request.session.get('game_id'))
